@@ -1,0 +1,41 @@
+<h1>
+  Hello, {{name}}<br/>
+  <span><p>2 way data binding</p></span>
+</h1>
+
+<div>
+  <p>
+    Name: {{name}}
+  </p>
+  <p>
+    Age: {{age}}
+  </p>
+  <p>
+    Address: {{address.street}}, {{address.city}}, {{address.state}}
+  </p>
+  <p>
+    Hobbies: <br/>
+    <!-- <ol>
+      <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+    </ol> -->
+    <span *ngFor="let hobby of hobbies">{{hobby}}<br/></span>
+  </p>
+</div>
+<button (click)="toggleEdit()" >Edit</button>
+<div *ngIf="showEdit">
+  <h3>Edit profile:</h3>
+  <form>
+    <label>Name: </label><br/>
+    <input type='text' [(ngModel)]="name" name='name' /><br/>
+    <label>Age: </label><br/>
+    <input type='text' [(ngModel)]="age" name='age' /><br/>
+    <label>Email: </label><br/>
+    <input type='text' [(ngModel)]="email" name='email' /><br/>
+    <label>Address street: </label><br/>
+    <input type='text' [(ngModel)]="address.street" name='street' /><br/>
+    <label>Address city: </label><br/>
+    <input type='text' [(ngModel)]="address.city" name='city' /><br/>
+    <label>Address state: </label><br/>
+    <input type='text' [(ngModel)]="address.state" name='state' /><br/>
+  </form>
+</div>

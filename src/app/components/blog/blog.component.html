@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let post of posts; let i = index">
+    <strong>{{i + 1}}. {{post.title}}</strong><br/>
+    {{post.body}}
+  </li>
+</ul>
